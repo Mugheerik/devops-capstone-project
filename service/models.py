@@ -72,7 +72,7 @@ class PersistentBase:
     @classmethod
     def find(cls, by_id):
         """Finds a record by it's ID"""
-        logger.info("Processing lookup for id %s ...", by_name)
+        logger.info("Processing lookup for id %s ...", by_id)
         return cls.query.get(by_id)
 
 
