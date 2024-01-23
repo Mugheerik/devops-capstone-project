@@ -127,9 +127,9 @@ class TestAccountService(TestCase):
     def test_get_account(self):
         """It should Read a single Account"""
         account = self._create_accounts(1)[0]
-        self.assertEqual(account,account)
+        self.assertEqual(account, account)
         self.assertEqual(200, status.HTTP_200_OK)
-  
+
     def test_get_account_not_found(self):
         """It should not Read an Account that is not found"""
         resp = self.client.get(f"{BASE_URL}/0")
@@ -158,7 +158,7 @@ class TestAccountService(TestCase):
     def test_delete_account(self):
         """It should Delete an Account"""
         account = self._create_accounts(1)[0]
-        self.assertEqual(account,account)
+        self.assertEqual(account, account)
         self.assertEqual(204, status.HTTP_204_NO_CONTENT)
 
     def test_method_not_allowed(self):
@@ -185,4 +185,3 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         # Check for the CORS header
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
-
