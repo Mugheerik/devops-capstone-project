@@ -61,7 +61,7 @@ def create_accounts():
 
         app.logger.info("Returning [%s] accounts", len(account_list))
         return jsonify(account_list), status.HTTP_200_OK
-        
+  
     @app.route("/accounts/<int:account_id>", methods=["GET"])
     def get_accounts(account_id):
         """
@@ -74,7 +74,7 @@ def create_accounts():
         if not account:
             abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
         return account.serialize(), status.HTTP_200_OK
-        
+  
     @app.route("/accounts/<int:account_id>", methods=["PUT"])
     def update_accounts(account_id):
         """
